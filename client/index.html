@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Contract Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        <h1>AI Contract Analyzer</h1>
+        <p class="sub">
+          Paste a contract and get a structured summary + risk flags.
+          <span class="muted">(Educational only, not legal advice.)</span>
+        </p>
+      </header>
+
+      <section class="card">
+        <label for="contractText">Contract text</label>
+        <textarea id="contractText" placeholder="Paste contract text here..."></textarea>
+
+        <div class="row">
+          <button id="analyzeBtn">Analyze</button>
+          <button id="loadSampleBtn" class="ghost">Load Sample NDA</button>
+          <span id="status" class="status"></span>
+        </div>
+      </section>
+
+      <section id="results" class="card hidden">
+        <h2>Results</h2>
+
+        <div class="grid">
+          <div class="panel">
+            <h3>Summary</h3>
+            <p id="summary"></p>
+          </div>
+
+          <div class="panel">
+            <h3>Key Terms</h3>
+            <ul id="keyTerms"></ul>
+          </div>
+
+          <div class="panel">
+            <h3>Risk Score</h3>
+            <div class="score" id="riskScore"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Risks</h3>
+            <div id="risks"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Questions to Ask</h3>
+            <ul id="questions"></ul>
+          </div>
+
+          <div class="panel">
+            <h3>Disclaimer</h3>
+            <p id="disclaimer" class="muted"></p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="muted">
+        Backend: <code id="apiBaseLabel"></code>
+      </footer>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
